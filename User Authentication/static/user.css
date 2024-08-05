@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+   }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: black;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  width: 500px;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  /* background-color: #04AA6D; */
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+  color: white;
+}
+
+
+.container {
+  /* width: 500px;
+  height: 250px; */
+  margin-left: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper{
+  width: 400px;
+  background:black;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg,white,black);
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+form h3{
+  color:white;
+}
+.wrapper form .field input,button{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #4158d0;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: black;
+  background: white;
+  transform: translateY(-50%);
+}
+
+.field{
+  display: grid;
+  place-items: center;
+}
+.btn {
+ border: none;
+ border-radius: 25px;
+ background: linear-gradient(-135deg,white,black);
+ transition: all 1.5s ease;
+ /* font-weight: bold; */
+ letter-spacing: 0.05rem;
+}
+
+.admin_btn{
+    border: none;
+   /* border-radius: 25px; */
+   background:black;
+   transition: all 1.5s ease;
+   color:white;
+   /* font-weight: bold; */
+   letter-spacing: 0.05rem;
+  transition: background-color 0.3s ease;
+}
+
+.admin_btn:hover:not(.active) {
+  background-color: #45a049;
+  color:black;
+}
+
+
+.btn span {
+ display: inline-block;
+ font-size: 17px;
+ border-radius: 25px;
+ color:white; 
+ text-align:center;
+ transition: 0.4s ease-in-out;
+ transition-property: color;
+}
+
+/* .sub:active{
+  transform: scale(0.95);
+} */
+
+
+

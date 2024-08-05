@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}">
+</head>
+<body>
+  <ul>
+    <br><br><br><br><br><br><br><br><br><br>
+    <li><a href="/home"><button class="admin_btn">Home</button></a></li>
+    <li><a href="/user_admin_profile"><button class="admin_btn">Profile</button></a></li>
+    <li><a href="/delete"><button class="admin_btn">Delete Account</button></a></li>
+    <li><a href="/logout"><button class="admin_btn">Logout</button></a></li>
+  </ul>
+
+  {% if name == "profile" %}
+  <div class= "container" ">
+    <div class="wrapper">
+      <div class="title">Your Profile</div>
+
+    <form>
+      <h3>First Name: {{first}}</h3>
+      <h3>Last Name : {{last}}</h3>
+      <h3>Phone : {{phone}}</h3>
+      <h3>Email : {{email}}</h3>
+      <h3>User Type : {{user_type}}</h3>
+    </form>
+      </div>
+      </div>
+  {% elif name == "home" %}
+  <div class= "container" ">
+    <div class="wrapper">
+      <div class="title">Welcome Back !</div>
+      </div>
+      </div>
+  {% endif %}
+
+<!-- <script>
+  const beforeUnloadHandler = (event) => {
+    event.preventDefault();
+    fetch("/logout");
+  };
+  window.addEventListener("beforeunload", beforeUnloadHandler);
+</script>   -->
+</body>
+</html>

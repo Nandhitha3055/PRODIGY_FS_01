@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  </head>
+  <body>
+      {% if name == "Sign in" or name == "Email or Password is not a match"%}
+    <div class="wrapper">
+      <div class="title">Welcome Back &#33;</div>
+
+<form action="/get" method="POST">
+     <h3 class="invalid" style="color:red;  text-align: center; margin-top: 3%;">{{name}}</h3>
+        <div class="field">
+          <input class="email" type="email" name="email" required>
+          <label>Email Address</label>
+        </div>
+        <div class="field">
+          <input class="password" type="password" name="Password" required>
+          <label >Password</label>
+        </div>
+
+<div class="pass-link">
+<br>
+</div>
+    <div class="field">
+        <button class="btn sub" onclick="btnClicked()"><span>Login</span></button>
+    </div>
+    <div class = "newuser">
+        <h3 style="color:grey;">New to this platform?&nbsp;<a href="/signup">signup</a></h3>
+    </div>
+      </form>
+      </div>
+      {% elif name == "signup"%}
+      <div class="wrapper">
+            <div class="title">Create Account</div>
+
+      <form action="/verify" method="POST">
+           <h3 class="invalid" style="color:red;  text-align: center; margin-top: 3%;"></h3>
+            <div class="field">
+                <input class="FirstName" type="text" name="FirstName" required>
+                <label>First Name</label>
+              </div>
+            <div class="field">
+                <input class="LastName" type="text" name="LastName" required>
+                <label>Last Name</label>
+              </div>
+          <div class="field">
+              <input class="Phone" type="text" name="PhoneNumber" required>
+              <label>Phone Number</label>
+            </div>
+              <div class="field">
+                <input class="email" type="email" name="email" required>
+                <label>Email Address</label>
+              </div>
+              <div class="field">
+                <input class="password" type="password" name="Password" required>
+                <label >Password</label>
+              </div>
+            <div class="field">
+                <input class="Confirm" type="password" name="Confirm-Password" required>
+                <label>Confirm Password</label>
+            </div>
+          <br>
+          <div style="color:white; display: grid; place-items: center;background:white;background:linear-gradient(-135deg,#808836,#AF8F6F);">
+            <h5>Password must contain atleast 1 uppercase,<br>&emsp;&emsp;&emsp;1 special Character and 1 digit</h5>
+          </div>
+      <div class="pass-link">
+
+      <br>
+      </div>
+      <div class="field">
+                <button class="btn sub" onclick="btnClicked()"><span>Sign up</span></button>
+        </div>
+          <div class = "newuser">
+              <h3 style="color:grey;">Already have an account&#33;&nbsp;<a href="/">login</a></h3>
+          </div>
+          </form>
+            </div>
+      {% endif %}
+
+      <div id="name-container" data-name="{{ name }}"></div>
+
+      {% include "scripts.html" %}
+      
+</body>
+</html>
